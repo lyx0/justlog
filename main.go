@@ -11,6 +11,7 @@ import (
 	"github.com/gempir/gempbotgo/api"
 	"github.com/gempir/gempbotgo/filelog"
 	"github.com/gempir/gempbotgo/humanize"
+	"github.com/gempir/gempbotgo/viewer"
 	"github.com/gempir/go-twitch-irc"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -26,6 +27,9 @@ func main() {
 
 	apiServer := api.NewServer()
 	go apiServer.Init()
+
+	viewerServer := viewer.NewServer()
+	go viewerServer.Init()
 
 	twitchClient := twitch.NewClient(os.Getenv("IRCUSER"), os.Getenv("IRCTOKEN"))
 

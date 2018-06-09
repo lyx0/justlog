@@ -5,6 +5,7 @@ services:
     restart: always
     ports:
       - "8025:8025"
+      - "8030:8030"
     env_file:
       - .env
     volumes:

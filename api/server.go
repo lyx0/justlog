@@ -20,6 +20,7 @@ func NewServer() Server {
 	return Server{
 		logPath:  "/var/twitch_logs",
 		channels: []string{},
+		port:     ":8025",
 	}
 }
 
@@ -51,6 +52,6 @@ func (s *Server) Init() {
 	e.GET("/channel/:channel/user/:username/:year/:month", s.getDatedUserLogs)
 	e.GET("/channel/:channel/user/:username/random", s.getRandomQuote)
 
-	fmt.Println("starting API on port :8025")
-	e.Logger.Fatal(e.Start(":8025"))
+	fmt.Println("Starting API on port " + s.port)
+	e.Logger.Fatal(e.Start(s.port))
 }
