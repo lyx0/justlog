@@ -6,5 +6,7 @@
            {{ call $x "foobar" }} &lt;-- this will call the $x with parameter "foobar"
            {{ end }}
         </p>
+
+        <h1> FUCK YOU </h1>
     </body>
 </html>
