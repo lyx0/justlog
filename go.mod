@@ -2,6 +2,8 @@ module github.com/gempir/justlog
 
 go 1.12
 
+replace github.com/gempir/go-twitch-irc/v2 => /home/gempir/dev/go-twitch-irc
+
 require (
 	github.com/gempir/go-twitch-irc/v2 v2.3.1
 	github.com/kr/pretty v0.1.0 // indirect
