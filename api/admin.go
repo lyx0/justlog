@@ -12,7 +12,7 @@ import (
 func (s *Server) authenticateAdmin(w http.ResponseWriter, r *http.Request) bool {
 	apiKey := r.Header.Get("X-Api-Key")
 
-	if apiKey == "" {
+	if apiKey == "" || apiKey != s.cfg.AdminAPIKey {
 		http.Error(w, "No I don't think so.", http.StatusForbidden)
 		return false
 	}
